@@ -14,7 +14,7 @@ class App extends React.Component {
     return (
       <section className='main'>
         <div className='header'>Countdown!</div>
-        <input></input>
+        <input placeholder='Add event'></input>
       </section>
     )
   }
