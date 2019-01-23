@@ -1,5 +1,5 @@
 import React from 'react';
-import Calendar from 'react-calendar';
+import Inputbox from './Inputbox';
 import './App.scss'
 
 class App extends React.Component {
@@ -11,13 +11,17 @@ class App extends React.Component {
       showCalendar: false,
       date: new Date(),
     };
+
+    this.onClickDateInput = this.onClickDateInput.bind(this);
+    this.onChangeEventNameInput = this.onChangeEventNameInput.bind(this);
+    this.onChangeDate = this.onChangeDate.bind(this);
   }
 
   onClickDateInput = () => {
     this.setState({showCalendar: true});
   }
 
-  onChangeEvent = e => {
+  onChangeEventNameInput = e => {
     this.setState({input: e.target.value})
   }
 
@@ -29,18 +33,19 @@ class App extends React.Component {
   }
 
   render() {
+    const {input, date, showCalendar} = this.state;
+
     return (
       <section className='main'>
         <div className='header'>Countdown!</div>
-        <input placeholder='Add event' value={this.state.input} onChange={this.onChangeEvent}>
-        </input>
-        <input placeholder='Add date' value={this.state.date} onClick={this.onClickDateInput}></input>
-        {
-          this.state.showCalendar ?
-          <Calendar onChange={this.onChangeDate} value={this.state.date}></Calendar> 
-          : null
-        }
-        <button onClick={this.onAddEvent}>Add Event</button>
+        <Inputbox
+          handleClickDate={this.onClickDateInput}
+          handleChangeEventName={this.onChangeEventNameInput}
+          handleChangeDate={this.onChangeDate}
+          inputVal={input}
+          dateVal={date}
+          showCal={showCalendar}
+        />
       </section> 
     )
   }
