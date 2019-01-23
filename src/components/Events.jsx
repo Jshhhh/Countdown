@@ -1,20 +1,24 @@
 import React from 'react';
+import Eventbox from './Eventbox';
 
-class Event extends React.Component {
+class Events extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
+    const { events } = this.props;
+
     return (
-      <div className='events'>
+      <section className='events'>
         {
-          this.props.date
+          events.map((event, i) => {
+            return <Eventbox name={event.name} key={i} date={event.time} />
+          })
         }
-      </div>
-    )
+      </section>
+    );
   }
 };
 
-export default Event;
+export default Events;
