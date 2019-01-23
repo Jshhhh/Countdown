@@ -13,7 +13,8 @@ class Inputbox extends React.Component {
       handleChangeDate,
       inputVal,
       dateVal,
-      showCal
+      showCal,
+      handleAddEvent
     } = this.props;
 
     return (
@@ -26,7 +27,7 @@ class Inputbox extends React.Component {
           <Calendar onChange={handleChangeDate} value={dateVal}></Calendar> 
           : null
         }
-        <button onClick={this.onAddEvent}>Add Event</button>
+        <button onClick={handleAddEvent}>Add Event</button>
       </section>
     );
   }
