@@ -1,4 +1,6 @@
 $fontcolor: #9CC4B2;
+$eventcolor: #9CC4B2;
+$background: #293132;
 
 .main {
   display: grid;
@@ -10,4 +12,16 @@ $fontcolor: #9CC4B2;
   font-size: 4rem;
   color: $fontcolor;
   margin: 2rem 0 2rem 0;
+}
+
+.events-sec {
+  display: grid;
+  grid-auto-rows: auto;
+}
+
+.event {
+  background-color: $eventcolor;
+  color: $background;
+  margin: 1rem;
+  padding: 1rem;
 }
