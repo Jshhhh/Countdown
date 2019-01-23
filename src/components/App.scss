@@ -1,8 +1,13 @@
+$fontcolor: #9CC4B2;
+
 .main {
   display: grid;
   columns: 1;
+  justify-items: center;
 }
 
 .header {
   font-size: 4rem;
+  color: $fontcolor;
+  margin: 2rem 0 2rem 0;
 }
